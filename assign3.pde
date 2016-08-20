@@ -63,10 +63,7 @@ image(bg1Ing,bg1-640,0);
 image(bg2Ing,bg2-640,0);
 image(fighterIng,f1,f2);
 image(treasureIng,t1,t2);
-rectMode(CORNERS);
-rect(20,15,hp,35);
-fill(#ff0000);
-image(hpIng,15,15);
+
     if (upPressed) {
       f2 -= speed;
     }
@@ -135,11 +132,12 @@ image(hpIng,15,15);
     break;
     
     case GAME_TEAM3 :
-    for(int team3=0; team3 <= 2; team3 ++){
+    for(int team3=0; team3 <= 1; team3 ++){
       image(enemyIng, team3*60 + team3speed-240, team3Y + team3*60);
       image(enemyIng, team3*60 + team3speed-240, team3Y - team3*60);
       image(enemyIng, 120+team3*60 + team3speed-240, team3Y - team3*60 +120);
       image(enemyIng, 120+team3*60 + team3speed-240, team3Y + team3*60 -120);      
+      image(enemyIng, 240 + team3speed-240, team3Y);
       team3speed += 2;
     }
     if(team3speed >= 880){
@@ -151,6 +149,10 @@ image(hpIng,15,15);
     break;    
 
   }
+rectMode(CORNERS);
+rect(20,15,hp,35);
+fill(#ff0000);
+image(hpIng,15,15);  
 }
 
 void keyPressed(){
